@@ -18,7 +18,8 @@ function createButtons() {
     const sign = document.querySelector('.sign');
     sign.addEventListener('click', () => {
         if(screen.innerText[0] == "-") screen.innerText = screen.innerText.slice(1);
-        else screen.innerText = "-" + screen.innerText;
+        else if(screen.innerText.length == 11) screen.innerText = "-" + screen.innerText.slice(0,10);
+        else if (screen.innerText != "0" )screen.innerText = "-" + screen.innerText;
     });
 }
 createButtons();
@@ -29,9 +30,20 @@ function operate(op,a,b) {
 }
 function display(n) {
     const screen = document.querySelector('.screen');
-    screen.innerText = n;
+    if(screen.innerText == "0") screen.innerText = n;
+    else if(screen.innerText.length < 11) screen.innerText += n;
+    else {
+        if(screen.innerText[0] == "-") screen.innerText = "-" + screen.innerText.slice(2) + n;
+        else screen.innerText = screen.innerText.slice(1) + n;
+    }
 }
 function clear() {
     const screen = document.querySelector('.screen');
-    screen.innerText = '0';
+    screen.innerText = "0";
 }
+
+/*
+To do:
+operations
+    save each input
+*/
