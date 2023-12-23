@@ -55,13 +55,19 @@ button {
 }
 
 .value {
-    background-color: #69C639;
+    background-color: rgba(40, 177, 97,1);
+    --bg-color: rgba(40, 177, 97,1);
+    --hover-color: rgb(40, 177, 97,0.5);
 }
 .operator {
-    background-color:#F4920B;
+    background-color:rgba(244, 146, 11,1);
+    --bg-color:rgba(244, 146, 11,1);
+    --hover-color: rgba(244, 146, 11,0.5);
 }
 .spec {
-    background-color: #22AADD;
+    background-color: rgba(34, 170, 221,1);
+    --bg-color: rgba(34, 170, 221,1);
+    --hover-color: rgba(34, 170, 221,0.5);
 }
 
 .wide {
